@@ -143,7 +143,7 @@ Estimated time spent: **16** hours spent in total
 
 `TODO://` Paste the **shareable link** to your animated app walkthrough below (replace `ADD_LOOM_LINK_HERE`). GitHub markdown won't render an embedded Loom player, so a plain link is what graders will use. Make sure the link is public and playable before submitting. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website. (🚫 Remove this paragraph after adding your walkthrough link.)
 
-**Walkthrough video:** [Music Playlist Explorer Walkthrough](ADD_LOOM_LINK_HERE)
+**Walkthrough video:** [Music Playlist Explorer Walkthrough](https://www.loom.com/share/18b343b570df4ba68580fe2e678ff6ce)
 
 ### Reflection
 
@@ -155,9 +155,9 @@ Yes, the topics over the async and await with the usage of the fetch function in
 
 I would've added a separate window or modal for deleting/creating/editing playlists. This was a time commitment I felt wasn't justified to not only do the other stretch goals but also make it seem seamless inside my UI design for this project. Another feature I consider adding was the ability to actually play music but there was an issue with having to work with an additional API (Spotify) or downloading the sound files locally.
 
-## TODO:
-
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+I did well on explaining the reason for design, explaining the logic for the features, and the choices for the color themes used across the website. I also explained why I choose the website layout and how everything is structured. Things that didn't go plan were my flow of my presentation, I would at time go off my plan and sometimes go off track when showing my features.
 
 ### Open-source libraries used
 
