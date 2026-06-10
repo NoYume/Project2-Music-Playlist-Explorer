@@ -1,0 +1,306 @@
+{
+  "playlists": [
+    {
+      "id": "p1",
+      "name": "K-Rnb",
+      "author": "Daniel Lam",
+      "coverImage": "../media/k-rnb/cover.jpg",
+      "likeCount": 1840,
+      "dateAdded": "2024-11-02",
+      "liked": false,
+      "songs": ["s1", "s2", "s3", "s4", "s29"]
+    },
+    {
+      "id": "p2",
+      "name": "MandoPop",
+      "author": "Daniel Lam",
+      "coverImage": "../media/mandopop/cover.jpg",
+      "likeCount": 932,
+      "dateAdded": "2025-03-18",
+      "liked": false,
+      "songs": ["s5", "s6", "s7", "s8", "s30"]
+    },
+    {
+      "id": "p3",
+      "name": "J-Pop",
+      "author": "Daniel Lam",
+      "coverImage": "../media/j-pop/cover.jpg",
+      "likeCount": 2571,
+      "dateAdded": "2025-07-09",
+      "liked": false,
+      "songs": ["s9", "s10", "s11", "s12", "s13"]
+    },
+    {
+      "id": "p4",
+      "name": "Chill",
+      "author": "Daniel Lam",
+      "coverImage": "../media/chill/cover.jpg",
+      "likeCount": 1205,
+      "dateAdded": "2025-01-25",
+      "liked": false,
+      "songs": ["s14", "s15", "s16", "s17", "s18"]
+    },
+    {
+      "id": "p5",
+      "name": "Sun Bathing",
+      "author": "Daniel Lam",
+      "coverImage": "../media/sunbathing/cover.jpg",
+      "likeCount": 1487,
+      "dateAdded": "2025-09-14",
+      "liked": false,
+      "songs": ["s19", "s20", "s21", "s22", "s23"]
+    },
+    {
+      "id": "p6",
+      "name": "City Lights",
+      "author": "Daniel Lam",
+      "coverImage": "../media/citylights/cover.jpg",
+      "likeCount": 3056,
+      "dateAdded": "2025-12-01",
+      "liked": false,
+      "songs": ["s24", "s25", "s26", "s27", "s28"]
+    }
+  ],
+  "songs": [
+    {
+      "id": "s1",
+      "title": "Instagram",
+      "artist": "Dean",
+      "coverImage": "../media/k-rnb/Dean_-_Instagram.jpg",
+      "duration": "4:16",
+      "liked": false
+    },
+    {
+      "id": "s2",
+      "title": "Bluebird",
+      "artist": "BIBI",
+      "coverImage": "../media/k-rnb/bibi.jpg",
+      "duration": "2:59",
+      "liked": false
+    },
+    {
+      "id": "s3",
+      "title": "YOGIJOGI",
+      "artist": "SUMIN, Slom",
+      "coverImage": "../media/k-rnb/Miniseries_album.jpg",
+      "duration": "3:27",
+      "liked": false
+    },
+    {
+      "id": "s4",
+      "title": "boy",
+      "artist": "offonoff",
+      "coverImage": "../media/k-rnb/offonoff.jpg",
+      "duration": "3:53",
+      "liked": false
+    },
+    {
+      "id": "s5",
+      "title": "Somewhere In Time",
+      "artist": "告五人",
+      "coverImage": "../media/mandopop/chinese.jpg",
+      "duration": "4:21",
+      "liked": false
+    },
+    {
+      "id": "s6",
+      "title": "Elegy of Teen Girl",
+      "artist": "DSPS",
+      "coverImage": "../media/mandopop/dsps.jpg",
+      "duration": "3:57",
+      "liked": false
+    },
+    {
+      "id": "s7",
+      "title": "My Only Girl",
+      "artist": "Khalil Fong",
+      "coverImage": "../media/mandopop/fong.jpg",
+      "duration": "4:10",
+      "liked": false
+    },
+    {
+      "id": "s8",
+      "title": "Natural Ability",
+      "artist": "The Crane",
+      "coverImage": "../media/mandopop/thecrane.jpg",
+      "duration": "3:44",
+      "liked": false
+    },
+    {
+      "id": "s9",
+      "title": "JANE DOE",
+      "artist": "Kenshi Yonezu",
+      "coverImage": "../media/j-pop/csm.jpg",
+      "duration": "3:20",
+      "liked": false
+    },
+    {
+      "id": "s10",
+      "title": "Kaikai Kitan",
+      "artist": "Eve",
+      "coverImage": "../media/j-pop/eve.jpg",
+      "duration": "3:30",
+      "liked": false
+    },
+    {
+      "id": "s11",
+      "title": "Matsuri",
+      "artist": "Fujii Kaze",
+      "coverImage": "../media/j-pop/fujiikaze.jpg",
+      "duration": "3:58",
+      "liked": false
+    },
+    {
+      "id": "s12",
+      "title": "Odoriko",
+      "artist": "Vaundy",
+      "coverImage": "../media/j-pop/odoriko.jpg",
+      "duration": "4:14",
+      "liked": false
+    },
+    {
+      "id": "s13",
+      "title": "Say It",
+      "artist": "Yorushika",
+      "coverImage": "../media/j-pop/yorushika.jpg",
+      "duration": "4:02",
+      "liked": false
+    },
+    {
+      "id": "s14",
+      "title": "Train",
+      "artist": "Chestnut Bakery",
+      "coverImage": "../media/chill/chestnut.jpg",
+      "duration": "3:41",
+      "liked": false
+    },
+    {
+      "id": "s15",
+      "title": "Beautiful World",
+      "artist": "Parannoul",
+      "coverImage": "../media/chill/parannoul.jpg",
+      "duration": "5:11",
+      "liked": false
+    },
+    {
+      "id": "s16",
+      "title": "Summer's Gone",
+      "artist": "honeydip",
+      "coverImage": "../media/chill/sunny.jpg",
+      "duration": "3:08",
+      "liked": false
+    },
+    {
+      "id": "s17",
+      "title": "Lemon Brandy",
+      "artist": "Railway Suicide Train",
+      "coverImage": "../media/chill/train.jpg",
+      "duration": "4:27",
+      "liked": false
+    },
+    {
+      "id": "s18",
+      "title": "surf.",
+      "artist": "wave to earth",
+      "coverImage": "../media/chill/wavetoearth.jpg",
+      "duration": "4:48",
+      "liked": false
+    },
+    {
+      "id": "s19",
+      "title": "That's What I Like",
+      "artist": "Bruno Mars",
+      "coverImage": "../media/sunbathing/bruno.jpg",
+      "duration": "4:02",
+      "liked": false
+    },
+    {
+      "id": "s20",
+      "title": "Peanut Butter & Tears",
+      "artist": "DPR IAN",
+      "coverImage": "../media/sunbathing/dprian.jpg",
+      "duration": "3:36",
+      "liked": false
+    },
+    {
+      "id": "s21",
+      "title": "Chicago",
+      "artist": "Michael Jackson",
+      "coverImage": "../media/sunbathing/jackson.jpg",
+      "duration": "3:25",
+      "liked": false
+    },
+    {
+      "id": "s22",
+      "title": "Ash",
+      "artist": "LE SSERAFIM",
+      "coverImage": "../media/sunbathing/lesserafim.jpg",
+      "duration": "3:01",
+      "liked": false
+    },
+    {
+      "id": "s23",
+      "title": "Super Shy",
+      "artist": "NewJeans",
+      "coverImage": "../media/sunbathing/newjeans.jpg",
+      "duration": "3:05",
+      "liked": false
+    },
+    {
+      "id": "s24",
+      "title": "Passionfruit",
+      "artist": "Drake",
+      "coverImage": "../media/citylights/drake.jpg",
+      "duration": "4:58",
+      "liked": false
+    },
+    {
+      "id": "s25",
+      "title": "Gimme Love",
+      "artist": "Joji",
+      "coverImage": "../media/citylights/joji.jpg",
+      "duration": "3:29",
+      "liked": false
+    },
+    {
+      "id": "s26",
+      "title": "Soft Spot",
+      "artist": "keshi",
+      "coverImage": "../media/citylights/keshi.jpg",
+      "duration": "3:16",
+      "liked": false
+    },
+    {
+      "id": "s27",
+      "title": "The Less I Know the Better",
+      "artist": "Tame Impala",
+      "coverImage": "../media/citylights/tame.jpg",
+      "duration": "3:39",
+      "liked": false
+    },
+    {
+      "id": "s28",
+      "title": "Baptized In Fear",
+      "artist": "The Weeknd",
+      "coverImage": "../media/citylights/weekend.jpg",
+      "duration": "3:20",
+      "liked": false
+    },
+    {
+      "id": "s29",
+      "title": "Night Train",
+      "artist": "Milena",
+      "coverImage": "../media/k-rnb/milena.jpg",
+      "duration": "3:34",
+      "liked": false
+    },
+    {
+      "id": "s30",
+      "title": "BLEU (feat. 9m88)",
+      "artist": "ØZI",
+      "coverImage": "../media/mandopop/ozi.jpg",
+      "duration": "3:48",
+      "liked": false
+    }
+  ]
+}

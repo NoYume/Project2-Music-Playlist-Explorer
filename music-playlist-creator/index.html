@@ -2,26 +2,313 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Waver</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- Your header content here -->
-    </header>
+    <!-- ============================================================= -->
+    <!-- SVG sprite: SF Symbols-style icons, referenced via <use>      -->
+    <!-- All paths use stroke="currentColor" so they inherit color.    -->
+    <!-- ============================================================= -->
+    <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14v-4M8 19V5M12 16V8M16 21V3M20 14v-4"/>
+        </symbol>
+        <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M9.5 20v-6h5v6"/>
+        </symbol>
+        <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/>
+        </symbol>
+        <symbol id="icon-artist" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M5 20a7 7 0 0 1 14 0"/>
+        </symbol>
+        <symbol id="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"/>
+        </symbol>
+        <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 6-6 6 6 6"/>
+        </symbol>
+        <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 6 6 6-6 6"/>
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </symbol>
+        <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.5 4.5 13a4.5 4.5 0 0 1 6.3-6.4l1.2 1.1 1.2-1.1a4.5 4.5 0 0 1 6.3 6.4Z"/>
+        </symbol>
+        <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1Z"/>
+        </symbol>
+        <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z"/>
+        </symbol>
+        <symbol id="icon-pause" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/>
+        </symbol>
+        <symbol id="icon-prev" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+            <path d="M7 6v12"/><path d="M19 6.5v11a.8.8 0 0 1-1.2.7l-9-5.5a.8.8 0 0 1 0-1.4l9-5.5A.8.8 0 0 1 19 6.5Z"/>
+        </symbol>
+        <symbol id="icon-next" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+            <path d="M17 6v12"/><path d="M5 6.5v11a.8.8 0 0 0 1.2.7l9-5.5a.8.8 0 0 0 0-1.4l-9-5.5A.8.8 0 0 0 5 6.5Z"/>
+        </symbol>
+        <symbol id="icon-shuffle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h4v4"/><path d="M4 20 20 4"/><path d="M16 20h4v-4"/><path d="m4 4 5 5"/><path d="m15 15 5 5"/>
+        </symbol>
+        <symbol id="icon-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 2.5 20.5 6 17 9.5"/><path d="M3.5 12V10a4 4 0 0 1 4-4h13"/><path d="M7 21.5 3.5 18 7 14.5"/><path d="M20.5 12v2a4 4 0 0 1-4 4h-13"/>
+        </symbol>
+        <symbol id="icon-volume" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5 6 9H3v6h3l5 4z"/><path d="M16 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/>
+        </symbol>
+        <symbol id="icon-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 4h3a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3"/><path d="M10 8 6 12l4 4"/><path d="M6 12h11"/>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6 18 18"/><path d="M18 6 6 18"/>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+        </symbol>
+        <symbol id="icon-lyrics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0"/><path d="M12 17v4"/><path d="M9 21h6"/>
+        </symbol>
+        <symbol id="icon-queue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7h11"/><path d="M4 12h11"/><path d="M4 17h7"/><path d="M16 10v8"/><circle cx="19" cy="18" r="2"/>
+        </symbol>
+        <symbol id="icon-pip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12" y="11" width="7" height="6" rx="1"/>
+        </symbol>
+        <symbol id="icon-fullscreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 9V5a1 1 0 0 1 1-1h4"/><path d="M20 9V5a1 1 0 0 0-1-1h-4"/><path d="M4 15v4a1 1 0 0 0 1 1h4"/><path d="M20 15v4a1 1 0 0 1-1 1h-4"/>
+        </symbol>
+        <symbol id="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3c.4 3.5 1.5 4.6 5 5-3.5.4-4.6 1.5-5 5-.4-3.5-1.5-4.6-5-5 3.5-.4 4.6-1.5 5-5Z"/><path d="M19 13c.2 1.7.8 2.3 2.5 2.5-1.7.2-2.3.8-2.5 2.5-.2-1.7-.8-2.3-2.5-2.5 1.7-.2 2.3-.8 2.5-2.5Z"/>
+        </symbol>
+    </svg>
 
-    <main> 
-        <!-- Your main content here -->
-    </main>
+    <div class="app">
 
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
-    <script src="data/data.js"></script>
+        <!-- ===== A. SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar__brand">
+                <svg class="icon brand__logo"><use href="#icon-logo"/></svg>
+                <span class="brand__name">Waver</span>
+            </div>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a class="nav-item is-active" href="#"><svg class="icon"><use href="#icon-home"/></svg><span>Home</span></a></li>
+                    <li><a class="nav-item" href="#"><svg class="icon"><use href="#icon-grid"/></svg><span>Categories</span></a></li>
+                    <li><a class="nav-item" href="#"><svg class="icon"><use href="#icon-artist"/></svg><span>Artists</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__playlists">
+                <button class="playlists__header" aria-expanded="true">
+                    <span>Playlists</span>
+                    <svg class="icon playlists__chevron"><use href="#icon-chevron"/></svg>
+                </button>
+                <!-- EMPTY container — later JS milestone fills with:
+                     <li><a class="playlist-nav__item" href="#">
+                         <img class="thumb thumb--sm" src="<coverImage>" alt="">
+                         <span><name></span></a></li>  (x6) -->
+                <ul class="playlist-nav"></ul>
+            </div>
+
+            <div class="sidebar__footer">
+                <!-- mobile only: top-nav Liked/Settings actions relocate here above Logout -->
+                <div class="sidebar__mobile-actions">
+                    <button class="logout-btn" aria-label="Liked songs">
+                        <svg class="icon"><use href="#icon-heart"/></svg><span>Liked Songs</span>
+                    </button>
+                    <button class="logout-btn" aria-label="Settings">
+                        <svg class="icon"><use href="#icon-gear"/></svg><span>Settings</span>
+                    </button>
+                </div>
+                <button class="logout-btn">
+                    <svg class="icon"><use href="#icon-logout"/></svg><span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Mobile drawer backdrop (shown only when the sidebar is open) -->
+        <div class="sidebar-backdrop" hidden></div>
+
+        <!-- ===== MAIN (the only vertical scroll container) ===== -->
+        <main class="main">
+
+            <!-- B. TOP NAV BAR -->
+            <header class="topnav">
+                <button class="icon-btn topnav__menu" aria-label="Menu"><svg class="icon"><use href="#icon-menu"/></svg></button>
+                <div class="search">
+                    <svg class="icon search__icon"><use href="#icon-search"/></svg>
+                    <input class="search__input" type="search" placeholder="Search for a song" aria-label="Search">
+                </div>
+                <div class="topnav__actions">
+                    <button class="icon-btn" aria-label="Liked songs"><svg class="icon"><use href="#icon-heart"/></svg></button>
+                    <button class="icon-btn" aria-label="Settings"><svg class="icon"><use href="#icon-gear"/></svg></button>
+                    <div class="profile">
+                        <img class="profile__avatar" src="../media/k-rnb/bibi.jpg" alt="Daniel">
+                        <div class="profile__meta">
+                            <span class="profile__name">Daniel</span>
+                            <span class="profile__tag">Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="main__content">
+
+                <!-- C. HERO CAROUSEL -->
+                <section class="hero" aria-label="Featured songs">
+                    <div class="section-head">
+                        <h2 class="section-head__title">Featured songs</h2>
+                        <div class="section-head__arrows">
+                            <button class="arrow-btn" aria-label="Previous"><svg class="icon"><use href="#icon-chevron-left"/></svg></button>
+                            <button class="arrow-btn" aria-label="Next"><svg class="icon"><use href="#icon-chevron-right"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="carousel">
+                        <article class="hero-card hero-card--side hero-card--prev">
+                            <img class="hero-card__img" src="../media/citylights/cover.jpg" alt="">
+                        </article>
+                        <article class="hero-card hero-card--center">
+                            <img class="hero-card__img" src="../media/k-rnb/Dean_-_Instagram.jpg" alt="">
+                            <div class="hero-card__meta">
+                                <span class="hero-card__title">Instagram</span>
+                                <span class="hero-card__artist">Dean</span>
+                            </div>
+                            <button class="hero-card__play" aria-label="Play"><svg class="icon icon--lg"><use href="#icon-play"/></svg></button>
+                        </article>
+                        <article class="hero-card hero-card--side hero-card--next">
+                            <img class="hero-card__img" src="../media/j-pop/cover.jpg" alt="">
+                        </article>
+                    </div>
+                </section>
+
+                <!-- C2. FEATURED PLAYLIST — rendered by script.js (random playlist) -->
+                <section class="featured-playlist" aria-label="Featured playlist">
+                    <div class="section-head">
+                        <h2 class="section-head__title">Featured playlist</h2>
+                    </div>
+                    <!-- script.js -> renderFeaturedPlaylist() fills:
+                         .feat-pl__cover (cover) + .feat-pl__body (head + .song-list) -->
+                    <div class="feat-pl"></div>
+                </section>
+
+                <!-- E. PLAYLIST GRID — rendered by script.js from data/data.json -->
+                <section aria-label="Playlists">
+                    <div class="section-head section-head--playlists">
+                        <h2 class="section-head__title">Playlists</h2>
+                        <!-- search (filter by name/author) + sort dropdown -->
+                        <div class="playlist-controls">
+                            <form class="playlist-search" role="search">
+                                <svg class="icon search__icon"><use href="#icon-search"/></svg>
+                                <input class="search__input playlist-search__input" type="search" placeholder="Search playlists" aria-label="Search playlists by name or author">
+                                <button type="button" class="playlist-search__clear" aria-label="Clear search" hidden><svg class="icon"><use href="#icon-close"/></svg></button>
+                                <button type="submit" class="playlist-search__submit">Search</button>
+                            </form>
+                            <label class="playlist-sort">
+                                <span class="playlist-sort__label">Sort by</span>
+                                <select class="playlist-sort__select" aria-label="Sort playlists">
+                                    <option value="name">Playlist name (A–Z)</option>
+                                    <option value="likes">Number of likes</option>
+                                    <option value="date">Date added</option>
+                                </select>
+                                <svg class="icon playlist-sort__chevron"><use href="#icon-chevron"/></svg>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- script.js -> createPlaylistCards() appends .playlist-card[data-id] here:
+                         <article class="playlist-card" data-id="<id>">
+                             <div class="playlist-card__thumb"><img src="<coverImage>" alt=""></div>
+                             <h3 class="playlist-card__title"><name></h3>
+                             <p class="playlist-card__author"><author></p>
+                             <div class="playlist-card__likes"><heart icon><likeCount></div>
+                         </article> -->
+                    <div class="playlist-cards"></div>
+                </section>
+
+            </div><!-- /main__content -->
+        </main>
+
+        <!-- ===== F. MEDIA PLAYER (fixed bottom bar — Spotify-style) ===== -->
+        <footer class="player">
+            <div class="player__now" data-song-id="">
+                <img class="thumb thumb--sm player__art" src="../media/k-rnb/Dean_-_Instagram.jpg" alt="">
+                <div class="player__meta">
+                    <span class="player__title">Instagram</span>
+                    <span class="player__artist">Dean</span>
+                </div>
+                <button class="icon-btn player__like" aria-label="Like" data-like=""><svg class="icon"><use href="#icon-heart"/></svg></button>
+            </div>
+
+            <div class="player__center">
+                <div class="player__controls">
+                    <button class="icon-btn player__shuffle" aria-label="Shuffle"><svg class="icon"><use href="#icon-shuffle"/></svg></button>
+                    <button class="icon-btn" aria-label="Previous"><svg class="icon"><use href="#icon-prev"/></svg></button>
+                    <button class="play-btn" aria-label="Play"><svg class="icon icon--lg"><use href="#icon-play"/></svg></button>
+                    <button class="icon-btn" aria-label="Next"><svg class="icon"><use href="#icon-next"/></svg></button>
+                    <button class="icon-btn player__repeat" aria-label="Repeat"><svg class="icon"><use href="#icon-repeat"/></svg></button>
+                </div>
+                <div class="progress">
+                    <span class="progress__time progress__current">0:00</span>
+                    <div class="progress__track">
+                        <div class="progress__fill"></div>
+                        <span class="progress__handle"></span>
+                    </div>
+                    <span class="progress__time progress__total">3:48</span>
+                </div>
+            </div>
+
+            <div class="player__extra">
+                <button class="icon-btn" aria-label="Lyrics"><svg class="icon"><use href="#icon-lyrics"/></svg></button>
+                <button class="icon-btn" aria-label="Queue"><svg class="icon"><use href="#icon-queue"/></svg></button>
+                <div class="volume">
+                    <button class="icon-btn" aria-label="Volume"><svg class="icon"><use href="#icon-volume"/></svg></button>
+                    <input class="volume-slider" type="range" min="0" max="100" value="70" aria-label="Volume level">
+                </div>
+                <button class="icon-btn" aria-label="Picture in picture"><svg class="icon"><use href="#icon-pip"/></svg></button>
+                <button class="icon-btn" aria-label="Fullscreen"><svg class="icon"><use href="#icon-fullscreen"/></svg></button>
+            </div>
+        </footer>
+
+    </div><!-- /app -->
+
+    <!-- ===== MODAL (hidden by default; lives outside .app for clean stacking) ===== -->
+    <div class="modal-overlay" id="playlistModal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <header class="modal__head">
+                <img class="thumb modal__cover" src="../media/k-rnb/cover.jpg" alt="">
+                <div class="modal__headtext">
+                    <h2 class="modal__title" id="modalTitle">K-Rnb</h2>
+                    <p class="modal__subtitle">Daniel Lam · 4 songs</p>
+                </div>
+                <button class="modal__shuffle" aria-label="Shuffle songs"><svg class="icon"><use href="#icon-shuffle"/></svg><span>Shuffle</span></button>
+                <button class="icon-btn modal__close" aria-label="Close"><svg class="icon"><use href="#icon-close"/></svg></button>
+            </header>
+            <!-- EMPTY container — later JS milestone fills with:
+                 <li class="song-row">
+                     <img class="thumb thumb--sm" src="<coverImage>" alt="">
+                     <div class="song-row__meta"><span class="song-row__title"><title></span>
+                         <span class="song-row__artist"><artist></span></div>
+                     <span class="song-row__dur"><duration></span>
+                 </li> -->
+            <ul class="song-list"></ul>
+            <footer class="modal__ai">
+                <button class="ai-btn modal__ai-btn"><svg class="icon"><use href="#icon-sparkle"/></svg><span>Get Description</span></button>
+                <div class="ai-desc" aria-live="polite"></div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="secrets.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
